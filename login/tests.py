@@ -30,3 +30,26 @@ class TestFree(TestCase):
         confirmacion = clave_valida
         self.s.registrarUsuario(correo_valido, clave_valida, confirmacion)
         self.assertEqual(self.s.diccionario[correo_valido], clave_valida[::-1])
+
+    """Cuarto Ciclo TDD"""
+
+    def test_registrar_usuario_invalido_clave_valida(self):
+        correo_invalido = "moises"
+        clave_valida = "Aaa12345"
+        confirmacion = clave_valida
+        msj_list = self.s.registrarUsuario(correo_invalido, clave_valida, confirmacion)
+        self.assertIn("Correo electrónico inválido", msj_list)
+
+    def test_registrar_usuario_valido_clave_invalida(self):
+        correo_invalido = "moises@correo.com"
+        clave_valida = "Aaa1234"
+        confirmacion = clave_valida
+        msj_list = self.s.registrarUsuario(correo_invalido, clave_valida, confirmacion)
+        self.assertIn("Clave inválida", msj_list)
+
+    def test_registrar_usuario_valido_clave_valida(self):
+        correo_invalido = "moises@correo.com"
+        clave_valida = "Aaa12345"
+        confirmacion = clave_valida
+        msj_list = self.s.registrarUsuario(correo_invalido, clave_valida, confirmacion)
+        self.assertIn("Usuario aceptado", msj_list)
