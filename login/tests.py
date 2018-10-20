@@ -29,4 +29,4 @@ class TestFree(TestCase):
         clave_valida = "Aaa12345"
         confirmacion = clave_valida
         self.s.registrarUsuario(correo_valido, clave_valida, confirmacion)
-        self.assertEqual(self.s.diccionario[correo], clave[::-1])
+        self.assertEqual(self.s.diccionario[correo_valido], clave_valida[::-1])
