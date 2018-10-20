@@ -33,3 +33,16 @@ class Seguridad():
             self.diccionario[correo] = clave[::-1]
 
         return msg_list
+
+    # Log usuario
+    def ingresarUsuario(self, correo, clave):
+        msg = "Usuario inválido"
+        if correo in self.diccionario:
+            if clave[::-1] == self.diccionario[correo]:
+                msg = "Usuario aceptado"
+                return msg
+            else :
+                msg = "Clave inválida"
+                return msg
+
+        return msg
