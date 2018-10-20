@@ -22,3 +22,11 @@ class TestFree(TestCase):
         confirmacion = clave_valida
         es_valido = self.s.validar_clave(clave_valida, confirmacion)
         self.assertTrue(es_valido)
+
+    """Tercer Ciclo TDD"""
+    def test_registrar_usuario_valido_clave_valida(self):
+        correo_valido = "moises@correo.com"
+        clave_valida = "Aaa12345"
+        confirmacion = clave_valida
+        self.s.registrarUsuario(correo_valido, clave_valida, confirmacion)
+        self.assertEqual(self.s.diccionario[correo], clave[::-1])
