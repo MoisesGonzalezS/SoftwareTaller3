@@ -31,6 +31,5 @@ class Seguridad():
             msg_list.append("Clave inválida""")
         if self.validar_clave(clave, confirmacion) and self.validar_correo(correo):
             self.diccionario[correo] = clave[::-1]
-            msg_list.append("Usuario aceptado")
 
         return msg_list
