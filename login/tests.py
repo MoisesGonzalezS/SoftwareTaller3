@@ -13,3 +13,12 @@ class TestFree(TestCase):
         correo_valido = "moises@correo.com"
         es_valido = self.s.validar_correo(correo_valido)
         self.assertTrue(es_valido)
+
+
+    """Segundo Ciclo TDD"""
+    # Frontera
+    def test_verificar_clave_valida(self):
+        clave_valida = "Aaa12345"
+        confirmacion = clave_valida
+        es_valido = self.s.validar_clave(clave_valida, confirmacion)
+        self.assertTrue(es_valido)
