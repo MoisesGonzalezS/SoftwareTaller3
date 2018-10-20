@@ -33,6 +33,7 @@ class TestFree(TestCase):
 
     """Cuarto Ciclo TDD"""
 
+    # Frontera
     def test_registrar_usuario_invalido_clave_valida(self):
         correo_invalido = "moises"
         clave_valida = "Aaa12345"
@@ -40,6 +41,7 @@ class TestFree(TestCase):
         msj_list = self.s.registrarUsuario(correo_invalido, clave_valida, confirmacion)
         self.assertIn("Correo electrónico inválido", msj_list)
 
+    # Frontera
     def test_registrar_usuario_valido_clave_invalida(self):
         correo_invalido = "moises@correo.com"
         clave_valida = "Aaa1234"
@@ -47,6 +49,7 @@ class TestFree(TestCase):
         msj_list = self.s.registrarUsuario(correo_invalido, clave_valida, confirmacion)
         self.assertIn("Clave inválida", msj_list)
 
+    # Esquina
     def test_registrar_usuario_valido_clave_valida(self):
         correo_invalido = "moises@correo.com"
         clave_valida = "Aaa12345"
