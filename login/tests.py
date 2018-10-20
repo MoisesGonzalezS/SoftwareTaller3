@@ -81,4 +81,14 @@ class TestFree(TestCase):
         msj = self.s.ingresarUsuario(correo_invalido, clave_invalida)
         self.assertEqual(msj, "Usuario no aceptado")
 
+    #Esquina
+    def test_ingresar_usuario_invalido_clave_invalida(self):
+        correo_invalido = "<moises>@correo.com"
+        clave_invalida = "Aaa112233445566778899"
+        self.s.registrarUsuario(correo_invalido, clave_invalida, clave_invalida)
+        msj = self.s.ingresarUsuario(correo_invalido, clave_invalida)
+        self.assertEqual(msj, "Usuario no aceptado")
+
+    
+
 
