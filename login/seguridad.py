@@ -24,6 +24,13 @@ class Seguridad():
 
     # Agrega un par clave-valor a diccionario. El correo y la clave invertida
     def registrarUsuario(self, correo, clave, confirmacion):
-        if not ( self.validar_correo(correo) and self.validar_clave(clave, confirmacion) ):
-            return False
-        self.diccionario[correo] = clave[::-1]
+        msg_list = []
+        if not  self.validar_correo(correo):
+            msg_list.append("Correo electrónico inválido")
+        if not self.validar_clave(clave, confirmacion):
+            msg_list.append("Clave inválida""")
+        if self.validar_clave(clave, confirmacion) and self.validar_correo(correo):
+            self.diccionario[correo] = clave[::-1]
+            msg_list.append("Usuario aceptado")
+
+        return msg_list
