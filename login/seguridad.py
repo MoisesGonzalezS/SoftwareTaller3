@@ -12,3 +12,11 @@ class Seguridad():
             return True
         except ValidationError:
             return False
+
+    def validar_clave(self, clave, confirmacion):
+        import re
+        if clave != confirmacion:
+            return False
+
+        regex_clave  = re.compile('(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,16}$')
+        return bool(regex_clave.match(clave))
