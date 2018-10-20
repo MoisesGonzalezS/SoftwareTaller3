@@ -1,7 +1,7 @@
 class Seguridad():
 
     def __init__(self):
-        pass
+        self.diccionario = {}
 
     # Método para validar una dirección de correo
     def validar_correo(self,correo):
@@ -20,3 +20,8 @@ class Seguridad():
 
         regex_clave  = re.compile('(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,16}$')
         return bool(regex_clave.match(clave))
+
+    def registrarUsuario(self, correo, clave, confirmacion):
+        if not ( self.validar_correo(correo) and self.validar_clave(clave, confirmacion) ):
+            return False
+        self.diccionario[correo] = clave[::-1]
