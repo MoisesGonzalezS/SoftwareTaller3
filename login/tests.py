@@ -56,3 +56,5 @@ class TestFree(TestCase):
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
         self.assertEqual(msj, "Usuario aceptado")
+
+
