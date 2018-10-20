@@ -19,7 +19,7 @@ class Seguridad():
         if clave != confirmacion:
             return False
 
-        regex_clave  = re.compile('(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,16}$')
+        regex_clave  = re.compile('(?=.*[A-Z]+)(?=.*[a-z]+)(?=.*[a-zA-z]{3})(?=.*\d+)[A-Za-z\d]{8,16}$')
         return bool(regex_clave.match(clave))
 
     # Agrega un par clave-valor a diccionario. El correo y la clave invertida
