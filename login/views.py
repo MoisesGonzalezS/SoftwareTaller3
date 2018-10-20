@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django import forms
 from .forms import UserRegistrationForm
+from .seguridad import Seguridad
 
 # Create your views here.
 def index(request):
@@ -14,11 +15,12 @@ def index(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            seg = Seguridad()
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-        # return HttpResponseRedirect("/response/")
-            return render(request, 'login/response.html', {'email' : email,
-                'password' : password })
+            confirmation = form.cleaned_data['password_confirmation']
+            msg = seg.registrarUsuario(email, password, confirmation)
+            return render(request, 'login/response.html', {'msg' : msg })
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -27,4 +29,4 @@ def index(request):
     return render(request, 'login/index.html', {'form': form})
 
 def response(request,mesage):
-    return HttpResponse("aso")
+    return HttpResponse("")
