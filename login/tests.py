@@ -42,7 +42,7 @@ class TestFree(TestCase):
         self.assertIn("Correo electrónico inválido", msj_list)
 
     # Frontera
-    def test_registrar_usuario_valido_clave_invalida(self):
+    def test_registrar_usuario_valido_clave_invalida1(self):
         correo_invalido = "moises@correo.com"
         clave_valida = "Aaa1234"
         confirmacion = clave_valida
@@ -50,7 +50,7 @@ class TestFree(TestCase):
         self.assertIn("Clave inválida", msj_list)
 
     """Quinto ciclo TDD"""
-    def test_ingresar_usuario_valido_clave_valida(self):
+    def test_ingresar_usuario_valido_clave_valida1(self):
         correo_valido = "moises@correo.com"
         clave_valida = "Aaa12345"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
@@ -58,7 +58,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario aceptado")
 
      # Frontera
-    def test_ingresar_usuario_valido_clave_valida(self):
+    def test_ingresar_usuario_valido_clave_valida2(self):
         correo_invalido = "(moises)@correo.com"
         clave_valida = "Aaa12345"
         self.s.registrarUsuario(correo_invalido, clave_valida, clave_valida)
@@ -66,7 +66,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario no aceptado")
 
     # Frontera
-    def test_registrar_usuario_valido_clave_invalida(self):
+    def test_registrar_usuario_valido_clave_invalida2(self):
         correo_valido = "moises@correo.com"
         clave_invalida = "Aaa112233445566778899"
         confirmacion = clave_invalida
@@ -74,7 +74,7 @@ class TestFree(TestCase):
         self.assertIn("Clave inválida", msj_list)
 
     #Esquina
-    def test_ingresar_usuario_invalido_clave_invalida(self):
+    def test_ingresar_usuario_invalido_clave_invalida3(self):
         correo_invalido = "moises()@correo.com"
         clave_invalida = "Aa12345$"
         self.s.registrarUsuario(correo_invalido, clave_invalida, clave_invalida)
@@ -82,7 +82,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario no aceptado")
 
     #Esquina
-    def test_ingresar_usuario_invalido_clave_invalida(self):
+    def test_ingresar_usuario_invalido_clave_invalida4(self):
         correo_invalido = "<moises>@correo.com"
         clave_invalida = "Aaa112233445566778899"
         self.s.registrarUsuario(correo_invalido, clave_invalida, clave_invalida)
@@ -90,7 +90,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario no aceptado")
 
     #Malicia
-    def test_ingresar_usuario_valido_clave_invalida(self):
+    def test_ingresar_usuario_valido_clave_invalida5(self):
         correo_valido = "moises@correo.com"
         clave_invalida = "Aa23456$"
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
@@ -98,7 +98,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario no aceptado")
 
     #Malicia
-    def test_ingresar_usuario_valido_clave_invalida(self):
+    def test_ingresar_usuario_valido_clave_invalida6(self):
         correo_valido = "moises@correo.com"
         clave_invalida = "Aa11223344556677889900$"
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
@@ -106,7 +106,7 @@ class TestFree(TestCase):
         self.assertEqual(msj, "Usuario no aceptado")
 
     #Malicia
-    def test_ingresar_usuario_valido_clave_invalida(self):
+    def test_ingresar_usuario_valido_clave_invalida7(self):
         correo_valido = "moises@correo.com"
         clave_invalida = ""
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
