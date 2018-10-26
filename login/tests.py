@@ -160,7 +160,7 @@ class TestFree(TestCase):
     """Quinto ciclo TDD"""
     # Frontera, probamos que un usuario se registre satisfactoria
     def test_ingresar_usuario_valido_clave_valida1(self):
-        correo_valido = "moises@correo.com"
+        correo_valido = "FrankZappa@correo.com"
         clave_valida = "Aaa12345"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
@@ -168,7 +168,7 @@ class TestFree(TestCase):
 
      # Frontera
     def test_ingresar_usuario_valido_clave_valida2(self):
-        correo_invalido = "(moises)@correo.com"
+        correo_invalido = "(FrankZappa)@correo.com"
         clave_valida = "Aaa12345"
         self.s.registrarUsuario(correo_invalido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_invalido, clave_valida)
@@ -177,7 +177,7 @@ class TestFree(TestCase):
     # Frontera 
     # la clave supera los 16 digitos
     def test_registrar_usuario_valido_clave_invalida2(self):
-        correo_valido = "moises@correo.com"
+        correo_valido = "FrankZappa@correo.com"
         clave_invalida = "Aaa112233445566778899"
         confirmacion = clave_invalida
         msj_list = self.s.registrarUsuario(correo_valido, clave_invalida, confirmacion)
@@ -275,7 +275,7 @@ class TestFree(TestCase):
     #Malicia
     # Usuario invalido, ya que agregaron una clave con un caracter especial
     def test_ingresar_usuario_valido_clave_invalida8(self):
-        correo_valido = "moises@correo.com"
+        correo_valido = "FrankZappa@correo.com"
         clave_invalida = "Aa23456$"
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
         msj = self.s.ingresarUsuario(correo_valido, clave_invalida)
@@ -285,7 +285,7 @@ class TestFree(TestCase):
     # Usuario invalido, ya que agregaron una clave con mas de 16 caracteres y 
     # un caracter especial
     def test_ingresar_usuario_valido_clave_invalida9(self):
-        correo_valido = "moises@correo.com"
+        correo_valido = "FrankZappa@correo.com"
         clave_invalida = "Aa11223344556677889900$"
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
         msj = self.s.ingresarUsuario(correo_valido, clave_invalida)
@@ -294,7 +294,7 @@ class TestFree(TestCase):
     #Malicia
     # Usuario invalido, ya que agregaron una clave vacia, lo cual no es posible
     def test_ingresar_usuario_valido_clave_invalida10(self):
-        correo_valido = "moises@correo.com"
+        correo_valido = "FrankZappa@correo.com"
         clave_invalida = ""
         self.s.registrarUsuario(correo_valido, clave_invalida, clave_invalida)
         msj = self.s.ingresarUsuario(correo_valido, clave_invalida)
