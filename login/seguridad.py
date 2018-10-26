@@ -1,9 +1,18 @@
+# Clase seguridad la cual se encarga de verificar si un usuario es valido para registrarse o ingresar
+#  Los requisitos son : 
+#           El correo cumple con el formato RFC822
+#           La clave debe poseer entre 8 y 16 caracteres (ambos incluidos)
+#           La clave debe tener al menos 3 letras
+#           La clave debe poseer al menos una letra mayuscula
+#           La clave debe poseer al menos una letra minuscula
+#           La clave debe poseer al menos un digito
+#           La clave no debe poseer elementos distintos a letras y numeros
 class Seguridad():
 
     def __init__(self):
         self.diccionario = {}
 
-    # Usamos librerias de django para saber si el correo es valido
+    # Usamos librerias de django para saber si el correo cumple con el RFC822
     def validar_correo(self,correo):
         from django.core.validators import validate_email
         from django.core.exceptions import ValidationError

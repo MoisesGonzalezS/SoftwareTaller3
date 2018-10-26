@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .seguridad import Seguridad
 
-# Create your tests here.
+# Clase que prueba el funcionamiento de los metodos incluidos en seguridad.py
 class TestFree(TestCase):
 
     def setUp(self):
