@@ -226,7 +226,7 @@ class TestFree(TestCase):
     # correo invalido tiene caracteres invalidos clave de  17 elementos con exactamente 3 letras 
     # y 1 mayuscula
     def test_ingresar_usuario_invalido_clave_invalida7(self):
-        correo_invalido = "<WatermelonInEasterEgg>@correo.com"
+        correo_invalido = "<WatermelonInEasterHay>@correo.com"
         clave_invalida = "Aaa22334455667788"
         self.s.registrarUsuario(correo_invalido, clave_invalida, clave_invalida)
         msj = self.s.ingresarUsuario(correo_invalido, clave_invalida)
@@ -236,7 +236,7 @@ class TestFree(TestCase):
     # correo valido (sin caracteres invalidos), clave de 8 elementos 
     # y 1 mayuscula y exactamente 3 letras
     def test_ingresar_usuario_valido_clave_valida01(self):
-        correo_valido = "WatermelonInEasterEgg@correo.com"
+        correo_valido = "WatermelonInEasterHay@correo.com"
         clave_valida = "Aaa12345"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
@@ -246,7 +246,7 @@ class TestFree(TestCase):
     # correo valido (sin caracteres invalidos), clave de 8 elementos 
     # 1 minuscula y exactamente 3 letras
     def test_ingresar_usuario_valido_clave_valida02(self):
-        correo_valido = "WatermelonInEasterEgg@correo.com"
+        correo_valido = "WatermelonInEasterHay@correo.com"
         clave_valida = "AAa12345"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
@@ -254,9 +254,9 @@ class TestFree(TestCase):
 
     #Esquina
     # correo valido(sin caracteres invalidos), clave de 16 elementos  
-    # 1 minuscula, 1 digitos
+    # 1 minuscula, 1 digito
     def test_ingresar_usuario_valido_clave_valida03(self):
-        correo_valido = "WatermelonInEasterEgg@correo.com"
+        correo_valido = "WatermelonInEasterHay@correo.com"
         clave_valida = "AAAAAAAAAAAAAAa1"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
@@ -264,9 +264,9 @@ class TestFree(TestCase):
 
     #Esquina
     # correo valido(sin caracteres invalidos), clave de 16 elementos  
-    # 1 mayuscula y 1 digitos
+    # 1 mayuscula y 1 digito
     def test_ingresar_usuario_valido_clave_valida04(self):
-        correo_valido = "WatermelonInEasterEgg@correo.com"
+        correo_valido = "WatermelonInEasterHay@correo.com"
         clave_valida = "Aaaaaaaaaaaaaaa4"
         self.s.registrarUsuario(correo_valido, clave_valida, clave_valida)
         msj = self.s.ingresarUsuario(correo_valido, clave_valida)
